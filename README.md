@@ -5,8 +5,11 @@ This project is for academic purpose. Thank you for Google's Mediapipe team :)
 
 ## Data Preprocessing with hand tracking(Desktop)
 Create training data on Desktop with any input video using [Hand Tracking](https://github.com/google/mediapipe/blob/master/mediapipe/docs/hand_tracking_desktop.md).
-* Clone Medapipe
+* Install Medapipe
 ```shell
-  https://github.com/google/mediapipe.git
+  git clone https://github.com/google/mediapipe.git
 ```
-* 
+* Change tflite_tensors_to_landmarks_caculator.cc file 
+
+
+
