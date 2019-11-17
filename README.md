@@ -22,7 +22,7 @@ See the rest of installation documents [here](https://mediapipe.readthedocs.io/e
   cd mediapipe/mediapipe/caculators/tflite
   rm tflite_tensors_to_landmarks_caculator.cc
 ```
-and add our new **tflite_tensors_to_landmarks_caculator.cc** file in the util folder.
+to our new **tflite_tensors_to_landmarks_caculator.cc** file in the util folder.
 
 ### 2. Create you own training data
 Make **train_videos** and **test_videos** for each sign language word in one folder. 
