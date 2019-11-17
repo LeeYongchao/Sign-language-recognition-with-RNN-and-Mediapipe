@@ -29,7 +29,7 @@ Make **train_videos** and **test_videos** for each sign language word in one fol
 * Usage
 To make mp4 file and txt file with mediapipe automatically, run
 ```shell
-  python get_text.py [--input_data_path=INPUT_PATH] [--output_data_path=OUTPUT_PATH] [--output_file_path=OUTPUT_TEXT_PATH]
+  python get_text.py --input_data_path=[INPUT_PATH] --output_data_path=[OUTPUT_PATH] --output_file_path=[OUTPUT_TEXT_PATH]
 ```
 Change INPUT_PATH, OUTPUT_PATH, OUTPUT_TEXT_PATH to your own folder directory path.
 
@@ -57,19 +57,18 @@ Mp4 and txt files will be extracted to your own folder path.
 
 * On training data
 ```shell
-  python get_data.py [--input_data_path=INPUT_PATH] [--output_file_path=OUTPUT_FILE]
+  python get_data.py --input_data_path=[INPUT_PATH] --output_file_path=[OUTPUT_FILE]
 ```
 This will create file `train_data.pkl`
 (아직 옵션은 구현 안함)
 
 ### 3. Train RNN model
 
-
-
+* Train
 ```shell
   python model.py [--input_file=PKL_FILE]
 ```
-(아직 옵션 구현 안함) 학습 시킴
+(아직 옵션 구현 안함)
 
 
 앞으로 할일: 평가랑 학습 분리, LSTM에 레이어 더 추가, 옵션 구현, 단어 분절 방법 찾기, 가변길이 처리, train/test 
