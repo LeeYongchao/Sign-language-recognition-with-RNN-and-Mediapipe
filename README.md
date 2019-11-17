@@ -10,6 +10,7 @@ Create training data on Desktop with input video using [Hand Tracking](https://g
 - Use video input instead of Webcam on Desktop to train with video data
 - Extract hand landmarks for every frame per one word and make it into one txt file
 
+### 1. Set up Hand Tracking framework
 * Install Medapipe
 ```shell
   git clone https://github.com/google/mediapipe.git
@@ -22,14 +23,34 @@ See the rest of installation documents [here](https://mediapipe.readthedocs.io/e
 ```
 and add our new **tflite_tensors_to_landmarks_caculator.cc** file in the util folder.
 
+### 2. Make train data using video input
+Make **train_videos** and **test_videos** for each sign language word in one folder. INPUT_PATH is path to your train_video and OUTPUT_PATH is where mp4 file with landmarks will be saved. OUTPUT_TEXT_PATH is where all the txt file for 42 landmarks(21 * (x, y)) in each frame in one word will be saved. 
+
 * Usage
+To make mp4 file and txt file with mediapipe automatically, run
 ```shell
-  python shell.py [--input_data_path=INPUT_PATH] [--output_data_path=OUTPUT_PATH] [--output_file_path=OUTPUT_TEXT_PATH] 
+  python get_text.py [--input_data_path=INPUT_PATH] [--output_data_path=OUTPUT_PATH] [--output_file_path=OUTPUT_TEXT_PATH]
 ```
 
---input_data_path=
---ouput_data_path=
---output_=
+텍스트파일 뽑음
+
+```shell
+  python get_data.py [--input_data_path=INPUT_PATH] [--output_file_path=OUTPUT_FILE]
+```
+
+(아직 옵션은 구현 안함) .pkl file 생성
+
+
+Train model
+```shell
+  python model.py [--input_file=PKL_FILE]
+```
+(아직 옵션 구현 안함) 학습 시킴
+
+
+앞으로 할일: 평가랑 학습 분리, LSTM에 레이어 더 추가, 옵션 구현, 단어 분절 방법 찾기, 가변길이 처리, train/test 
+
+
 
 
 
