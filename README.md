@@ -17,8 +17,10 @@ Create training data on Desktop with input video using [Hand Tracking](https://g
 See the rest of installation documents [here](https://mediapipe.readthedocs.io/en/latest/install.html) 
 * Change tflite_tensors_to_landmarks_caculator.cc file in util 
 ```shell
-  cd mediapipe/caculators/tflite
+  cd mediapipe/mediapipe/caculators/tflite
+  rm tflite_tensors_to_landmarks_caculator.cc
 ```
+
 
 
 
