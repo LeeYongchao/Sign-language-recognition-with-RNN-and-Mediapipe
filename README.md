@@ -28,6 +28,7 @@ and add our new **tflite_tensors_to_landmarks_caculator.cc** file in the util fo
 Make **train_videos** and **test_videos** for each sign language word in one folder. 
 
 * Usage
+
 To make mp4 file and txt file with mediapipe automatically, run
 ```shell
   python get_text.py --input_data_path=[INPUT_PATH] --output_data_path=[OUTPUT_PATH] --output_file_path=[OUTPUT_TEXT_PATH]
