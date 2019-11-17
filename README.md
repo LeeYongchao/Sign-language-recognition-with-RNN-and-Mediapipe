@@ -20,7 +20,17 @@ See the rest of installation documents [here](https://mediapipe.readthedocs.io/e
   cd mediapipe/mediapipe/caculators/tflite
   rm tflite_tensors_to_landmarks_caculator.cc
 ```
-and add our new **tflite_tensors_to_landmarks_caculator.cc** file in util folder
+and add our new **tflite_tensors_to_landmarks_caculator.cc** file in the util folder.
+
+* Usage
+```shell
+  python shell.py [--input_data_path=INPUT_PATH] [--output_data_path=OUTPUT_PATH] [--output_file_path=OUTPUT_TEXT_PATH] 
+```
+
+--input_data_path=
+--ouput_data_path=
+--output_=
+
 
 
 
