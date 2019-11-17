@@ -24,7 +24,7 @@ See the rest of installation documents [here](https://mediapipe.readthedocs.io/e
 and add our new **tflite_tensors_to_landmarks_caculator.cc** file in the util folder.
 
 ### 2. Create you own training data
-Make **train_videos** and **test_videos** for each sign language word in one folder. INPUT_PATH is path to your input video and OUTPUT_PATH is where mp4 file with hand tracking will be saved. OUTPUT_TEXT_PATH is where all the txt file for 42 landmarks(21 * (x, y)) in each frame in one word will be saved. 
+Make **train_videos** and **test_videos** for each sign language word in one folder. INPUT_PATH is path to your input video and OUTPUT_PATH is where mp4 file with hand tracking will be saved. All the txt files of 42 landmarks(21 * (x, y)) in each frame for one word will be saved in OUTPUT_TEXT_PATH. 
 
 * Usage
 To make mp4 file and txt file with mediapipe automatically, run
@@ -53,16 +53,19 @@ For example:
     └── IMG_2475.MOV
     ...
 ```
-Mp4 and txt files will be extracted to your folder path 
+Mp4 and txt files will be extracted to your own folder path.
 
+* On training data
 ```shell
   python get_data.py [--input_data_path=INPUT_PATH] [--output_file_path=OUTPUT_FILE]
 ```
+This will create file `train_data.pkl`
+(아직 옵션은 구현 안함)
 
-(아직 옵션은 구현 안함) .pkl file 생성
+### 3. Train RNN model
 
 
-Train model
+
 ```shell
   python model.py [--input_file=PKL_FILE]
 ```
