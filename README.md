@@ -36,7 +36,7 @@ Change INPUT_PATH, OUTPUT_PATH, OUTPUT_TEXT_PATH to your own folder directory pa
 For example:
 ```shell
   input_videos
-  ├── Apple
+├── Apple
 │   ├── IMG_2733.MOV
 │   ├── IMG_2734.MOV
 │   ├── IMG_2735.MOV
