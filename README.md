@@ -15,3 +15,7 @@ Create training data on Desktop with any input video using [Hand Tracking](https
 ```
 
 
+## prerequisite
+
+
+
