@@ -4,7 +4,13 @@ Sign language gesture recognition using a reccurent neural network(RNN) with Med
 This project is for academic purpose. Thank you for Google's Mediapipe team :)
 
 ## Data Preprocessing with hand tracking(Desktop)
-Create training data on Desktop with any input video using [Hand Tracking](https://github.com/google/mediapipe/blob/master/mediapipe/docs/hand_tracking_desktop.md).
+Create training data on Desktop with input video using [Hand Tracking]
+(https://github.com/google/mediapipe/blob/master/mediapipe/docs/hand_tracking_mobile_gpu.md)
+
+**CUSTOMIZE:**
+- Use video input instead of Webcam on Desktop to train with video data
+- Extract hand landmarks for every frame per one word and make it into one txt file
+
 * Install Medapipe
 ```shell
   git clone https://github.com/google/mediapipe.git
