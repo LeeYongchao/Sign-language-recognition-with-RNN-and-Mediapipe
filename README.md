@@ -5,7 +5,7 @@ This project is for academic purpose. Thank you for Google's Mediapipe team :)
 
 ## Data Preprocessing with hand tracking(Desktop)
 Create training data on Desktop with input video using [Hand Tracking](https://github.com/google/mediapipe/blob/master/mediapipe/docs/hand_tracking_mobile_gpu.md).
-Gesture recognition with deep learning model can be done with only 42 hand landmarks rather than OpenCV approach.
+Gesture recognition with deep learning model can be done with *only 42 hand landmarks* per frame rather than OpenCV approach.
 
 **CUSTOMIZE:**
 - Use video input instead of Webcam on Desktop to train with video data
