@@ -23,16 +23,37 @@ See the rest of installation documents [here](https://mediapipe.readthedocs.io/e
 ```
 and add our new **tflite_tensors_to_landmarks_caculator.cc** file in the util folder.
 
-### 2. Make train data using video input
-Make **train_videos** and **test_videos** for each sign language word in one folder. INPUT_PATH is path to your train_video and OUTPUT_PATH is where mp4 file with landmarks will be saved. OUTPUT_TEXT_PATH is where all the txt file for 42 landmarks(21 * (x, y)) in each frame in one word will be saved. 
+### 2. Create you own training data
+Make **train_videos** and **test_videos** for each sign language word in one folder. INPUT_PATH is path to your train_video and OUTPUT_PATH is where mp4 file with hand tracking will be saved. OUTPUT_TEXT_PATH is where all the txt file for 42 landmarks(21 * (x, y)) in each frame in one word will be saved. 
 
 * Usage
 To make mp4 file and txt file with mediapipe automatically, run
 ```shell
   python get_text.py [--input_data_path=INPUT_PATH] [--output_data_path=OUTPUT_PATH] [--output_file_path=OUTPUT_TEXT_PATH]
 ```
+Change INPUT_PATH, OUTPUT_PATH, OUTPUT_TEXT_PATH to your own folder directory path.
 
-텍스트파일 뽑음
+For example:
+```shell
+  input_videos
+  ├── Apple
+│   ├── IMG_2733.MOV
+│   ├── IMG_2734.MOV
+│   ├── IMG_2735.MOV
+│   └── IMG_2736.MOV
+├── Drink
+│   ├── IMG_2631.MOV
+│   ├── IMG_2632.MOV
+│   ├── IMG_2633.MOV
+│   └── IMG_2634.MOV
+└── Hello
+    ├── IMG_2472.MOV
+    ├── IMG_2473.MOV
+    ├── IMG_2474.MOV
+    └── IMG_2475.MOV
+    ...
+```
+
 
 ```shell
   python get_data.py [--input_data_path=INPUT_PATH] [--output_file_path=OUTPUT_FILE]
