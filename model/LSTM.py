@@ -6,11 +6,11 @@ import pickle
 import numpy as np
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.utils import to_categorical
-import argparse
+
 
 class Data:
     def __init__(self,pklname):
-
+        
         X = []
         Y = []
         maxlength=0
@@ -20,7 +20,7 @@ class Data:
                 features = frame[0]
                 maxlength=len(features)
                 word = frame[1]
-
+            
                 X.append(np.array(features))
                 Y.append(word)
         X = np.array(X)
@@ -35,13 +35,13 @@ class Data:
         one_hot=to_categorical(encoded)
         #print(one_hot)
 
-
+       
         (x_train, y_train) = X, one_hot
-
+        
         self.x_train, self.y_train = x_train, y_train
         self.x_test, self.y_test = x_train, y_train
         self.length=maxlength
-
+        
 class RNN_LSTM(models.Model):
     def __init__(self,maxlen):
         x = layers.Input((maxlen,))
@@ -69,7 +69,8 @@ class Machine:
                   batch_size=batch_size,
                   epochs=epochs,
                   validation_data=(data.x_test, data.y_test))
-		        score, acc = model.evaluate(data.x_test, data.y_test,
+
+        score, acc = model.evaluate(data.x_test, data.y_test,
                                     batch_size=batch_size)
         print('Test performance: accuracy={0}, loss={1}'.format(acc, score))
 
@@ -85,5 +86,4 @@ if __name__ == '__main__':
     args=parser.parse_args()
     pkl_data_path=args.pkl_data_path
     main(pkl_data_path)
-
 
