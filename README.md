@@ -68,9 +68,9 @@ This will create file `train_data.pkl`
 
 * Train
 ```shell
-  python model.py [--input_file=PKL_FILE]
+  python LSTM.py --input_file=[PKL_FILE]
 ```
-(아직 옵션 구현 안함)
+Add path to preprocessed pkl file into PKL_FILE.
 
 
 앞으로 할일: 평가랑 학습 분리, LSTM에 레이어 더 추가, 옵션 구현, 단어 분절 방법 찾기, 가변길이 처리, train/test 
