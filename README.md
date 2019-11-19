@@ -62,7 +62,6 @@ Mp4 and txt files will be extracted to your own folder path.
   python make_pickle.py --input_data_path=[INPUT_PATH] --output_file_path=[OUTPUT_FILE]
 ```
 This will create file `train_data.pkl`
-(아직 옵션은 구현 안함)
 
 ### 3. Train RNN model
 
