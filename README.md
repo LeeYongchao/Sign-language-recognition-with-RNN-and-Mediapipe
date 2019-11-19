@@ -31,7 +31,7 @@ Make **train_videos** and **test_videos** for each sign language word in one fol
 
 To make mp4 file and txt file with mediapipe automatically, run
 ```shell
-  python make_data.py --input_data_path=[INPUT_PATH] --output_data_path=[OUTPUT_PATH] --output_file_path=[OUTPUT_TEXT_PATH]
+  python build.py --input_data_path=[INPUT_PATH] --output_data_path=[OUTPUT_PATH] --output_file_path=[OUTPUT_TEXT_PATH]
 ```
 Change INPUT_PATH, OUTPUT_PATH, OUTPUT_TEXT_PATH to your own folder directory path. INPUT_PATH is path to your input video and OUTPUT_PATH is where mp4 file with hand tracking will be saved. All the txt files of 42 landmarks in each frame for one word will be saved in OUTPUT_TEXT_PATH. 
 
