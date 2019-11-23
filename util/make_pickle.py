@@ -2,6 +2,8 @@ import numpy as np
 import pickle
 import os
 import sys
+import argparse
+import random
 
 def search(dirname):
     listfile=os.listdir(dirname)
@@ -35,11 +37,24 @@ def search(dirname):
                 numbers.append(wordname)
                 #print(numbers[0][8735])
             predict.append(numbers)
-            
+    random.shuffle(predict)        
     return predict
 
-ret=search("/Users/jongwook/Desktop/output_file/")
-np.shape(ret)
-out_file='/Users/jongwook/Desktop/output.pkl'
-with open(out_file,'wb') as fout:
-	pickle.dump(ret,fout)
+def main(inputfile_path,output_path):
+	ret=search(inputfile_path)
+	np.shape(ret)
+	out_file=output_path+'test_data.pkl'
+	with open(out_file,'wb') as fout:
+		pickle.dump(ret,fout)
+
+if __name__=="__main__":
+	parser = argparse.ArgumentParser(description='make pkl_file')
+	parser.add_argument("--input_file_path",help=" ")
+	parser.add_argument("--output_path",help=" ")
+	args=parser.parse_args()
+	input_file_path=args.input_file_path
+	output_path=args.output_path
+	main(input_file_path,output_path)
+
+
+
