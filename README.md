@@ -16,7 +16,7 @@ Gesture recognition with deep learning model can be done with only **42 hand lan
 ```shell
   git clone https://github.com/google/mediapipe.git
 ```
-See the rest of installation documents [here](https://mediapipe.readthedocs.io/en/latest/install.html) 
+See the rest of installation documents [here](https://mediapipe.readthedocs.io/en/latest/install.html).
 * Change **tflite_tensors_to_landmarks_caculator.cc** file
 ```shell
   cd mediapipe/mediapipe/caculators/tflite
