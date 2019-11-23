@@ -17,18 +17,19 @@ Gesture recognition with deep learning model can be done with only **42 hand lan
   git clone https://github.com/google/mediapipe.git
 ```
 See the rest of installation documents [here](https://mediapipe.readthedocs.io/en/latest/install.html) 
-* Change tflite_tensors_to_landmarks_caculator.cc file in util 
+* Change tflite_tensors_to_landmarks_caculator.cc file
 ```shell
   cd mediapipe/mediapipe/caculators/tflite
   rm tflite_tensors_to_landmarks_caculator.cc
 ```
-to our new **tflite_tensors_to_landmarks_caculator.cc** file in the util folder.
+to our new **tflite_tensors_to_landmarks_caculator.cc** file in the modified_mediapipe folder.
 
-* Change demo_run_graph_main.cc file in util
+* Change demo_run_graph_main.cc file 
 ```shell
-  cd mediapipe/mediapipe/caculators/tflite
-  rm tflite_tensors_to_landmarks_caculator.cc
+  cd mediapipe/mediapipe/examples/desktop
+  rm demo_run_graph_main.cc
 ```
+to our new **demo_run_graph_main.cc** file in the modified_mediapipe folder.
 
 ### 2. Create you own training data
 Make **train_videos** and **test_videos** for each sign language word in one folder. 
