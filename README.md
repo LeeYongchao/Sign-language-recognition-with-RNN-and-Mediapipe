@@ -62,7 +62,8 @@ For example:
     └── IMG_2475.MOV
     ...
 ```
-Mp4 and txt files will be extracted to your own folder path. (DO NOT use '_' to your folder path name ex) Apple_pie (X))
+Mp4 and txt files will be extracted to your own folder path. 
+(DO NOT use '_' to your folder path name ex) Apple_pie (X))
 
 * On training data
 ```shell
