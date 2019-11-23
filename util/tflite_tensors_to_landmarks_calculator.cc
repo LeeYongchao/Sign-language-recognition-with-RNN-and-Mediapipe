@@ -22,10 +22,13 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 using namespace std;
 
 extern string input_video_new;
-
+extern string output_video_new;
+static bool cpos=false;
+static vector<pair<float,float>> landpos(21);
 namespace mediapipe {
 
 // A calculator for converting TFLite tensors from regression models into
@@ -168,7 +171,6 @@ REGISTER_CALCULATOR(TfLiteTensorsToLandmarksCalculator);
   if (cc->Outputs().HasTag("NORM_LANDMARKS")) {
     auto output_norm_landmarks =
         absl::make_unique<std::vector<NormalizedLandmark>>();
-    int i=0;
     //추가한 부분
     //비디오 이름만 빼오기
     string video_fname="";
@@ -186,8 +188,16 @@ REGISTER_CALCULATOR(TfLiteTensorsToLandmarksCalculator);
     for(;input_video_new[slx]!='/';slx--){
     	dir_name=input_video_new[slx]+dir_name;
     }
-    string str="/Users/jongwook/Desktop/output_file/"+dir_name+video_fname+".txt";
+    string output_path_cp="";//아웃풋 파일의 경로의 일부를 저장하는 변수
+    int j=0;
+    for (;output_video_new[j]!='=';j++);
+    j++;
+    for(;output_video_new[j]!='_';j++){
+  	output_path_cp.push_back(output_video_new[j]);
+    }
+    string str=output_path_cp+dir_name+video_fname+".txt";
     ofstream out(str,std::ios_base::out | std::ios_base::app);
+    int i=0;	
     for (const auto& landmark : *output_landmarks) {
       NormalizedLandmark norm_landmark;
       norm_landmark.set_x(static_cast<float>(landmark.x()) /
@@ -195,13 +205,19 @@ REGISTER_CALCULATOR(TfLiteTensorsToLandmarksCalculator);
       norm_landmark.set_y(static_cast<float>(landmark.y()) /
                           options_.input_image_height());
       norm_landmark.set_z(landmark.z() / options_.normalize_z());
-      out<<static_cast<float>(landmark.x()) / options_.input_image_width()<<" ";
-      out<<static_cast<float>(landmark.y()) / options_.input_image_height()<<" ";
+      if(cpos){
+     	 out<<static_cast<float>(landmark.x()) / options_.input_image_width()-landpos[i].first<<" ";
+     	 out<<static_cast<float>(landmark.y()) / options_.input_image_height()-landpos[i].second<<" ";
+      }
+      landpos[i]=make_pair(static_cast<float>(landmark.x())/options_.input_image_width(),
+		static_cast<float>(landmark.y())/options_.input_image_height());
       i=i+1;
       output_norm_landmarks->push_back(norm_landmark);
     }
+    cpos=true;
     idx++;
     out.close();
+    //추가한 부분 끝
     cc->Outputs()
         .Tag("NORM_LANDMARKS")
         .Add(output_norm_landmarks.release(), cc->InputTimestamp());
