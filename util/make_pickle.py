@@ -28,6 +28,8 @@ def search(dirname):
         wordname=file
         textlist=os.listdir(dirname+wordname)
         for text in textlist:
+            if "_" in text:
+                continue;		
             textname=dirname+wordname+"/"+text
             with open(textname) as data:
                 numbers = [[i for i in line.split(' ')][:-1] for line in data.readlines()]
