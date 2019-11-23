@@ -5,7 +5,7 @@ This project is for academic purpose. Thank you for Google's Mediapipe team :)
 
 ## Data Preprocessing with hand tracking(Desktop)
 Create training data on Desktop with input video using [Hand Tracking](https://github.com/google/mediapipe/blob/master/mediapipe/docs/hand_tracking_mobile_gpu.md).
-Gesture recognition with deep learning model can be done with only **42 hand landmarks** per frame, so it's much faster than OpenCV approach.
+Gesture recognition with deep learning model can be done with only **42 hand landmarks** RNN training per frame.
 
 **CUSTOMIZE:**
 - Use video input instead of Webcam on Desktop to train with video data
@@ -32,7 +32,7 @@ to our new tflite_tensors_to_landmarks_caculator.cc file in the modified_mediapi
 to our new demo_run_graph_main.cc file in the modified_mediapipe folder.
 
 ### 2. Create you own training data
-Make **train_videos** and **test_videos** for each sign language word in one folder. 
+Make **train_videos** and **test_videos** for each sign language word in one folder. Copy **build.by** file in util folder to your mediapipe directory.
 * Usage
 
 To make mp4 file and txt file with mediapipe automatically, run
@@ -41,7 +41,7 @@ To make mp4 file and txt file with mediapipe automatically, run
 ```
 inside mediapipe directory.
 
-Change INPUT_PATH, OUTPUT_PATH, OUTPUT_TEXT_PATH to your own folder directory path. INPUT_PATH is path to your input video and OUTPUT_PATH is where mp4 file with hand tracking will be saved. All the txt files of 42 landmarks in each frame for one word will be saved in OUTPUT_TEXT_PATH. 
+Change INPUT_PATH, OUTPUT_PATH to your own folder directory path. INPUT_PATH is path to your input videos. OUTPUT_PATH is where all the hand-tracked mp4 files and txt files of 42 landmarks will be saved.
 
 For example:
 ```shell
@@ -63,9 +63,7 @@ input_videos
     └── IMG_2475.MOV
     ...
 ```
-Mp4 and txt files will be extracted to your own folder path. 
-
-(DO NOT use '_' to your folder path name ex) Apple_pie (X))
+OUTPUT_PATH is initially empty directory and when build is done, Mp4 and txt files will be extracted to your own folder path. (DO NOT use '_' to your folder path name ex) Apple_pie (X))
 
 * On training data
 ```shell
