@@ -11,6 +11,8 @@ def main(input_data_path,output_data_path):
 	listfile=os.listdir(input_data_path)
 	for file in listfile:
     		#해당 디렉토리의 하위 디렉토리 폴더명을 찾음
+		if not(os.path.isdir(input_data_path+file)): #ignore .DS_Store
+	            continue
 		word=file+'/'
 		fullfilename=os.listdir(input_data_path+word)
 		# 하위디렉토리의 모든 비디오들의 이름을 저장
