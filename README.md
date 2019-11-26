@@ -67,7 +67,7 @@ OUTPUT_PATH is initially empty directory and when build is done, Mp4 and txt fil
 
 * On training data
 ```shell
-  python make_pickle.py --input_data_path=[INPUT_PATH] --output_file_path=[OUTPUT_FILE]
+  python make_pickle.py --input_file_path=[INPUT_PATH] --output_path=[OUTPUT_FILE]
 ```
 
 INPUT_PATH is path where all the extracted txt files are saved. This will create file `train_data.pkl` inside OUTPUT_FILE path.
