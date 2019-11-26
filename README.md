@@ -63,7 +63,7 @@ input_videos
     └── IMG_2475.MOV
     ...
 ```
-OUTPUT_PATH is initially empty directory and when build is done, Mp4 and txt files will be extracted to your own folder path. (DO NOT use '_' to your folder path name ex) Apple_pie (X))
+OUTPUT_PATH is initially empty directory and when build is done, Mp4 and txt files will be extracted to your own folder path. (DO NOT use space bar or '_' to your folder path and video name ex) Apple_pie (X))
 
 * On training data
 ```shell
