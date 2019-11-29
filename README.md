@@ -51,26 +51,37 @@ input_videos
 │   ├── IMG_2734.MOV
 │   ├── IMG_2735.MOV
 │   └── IMG_2736.MOV
-├── Drink
+├── Bird
 │   ├── IMG_2631.MOV
 │   ├── IMG_2632.MOV
 │   ├── IMG_2633.MOV
 │   └── IMG_2634.MOV
-└── Hello
+└── Sorry
     ├── IMG_2472.MOV
     ├── IMG_2473.MOV
     ├── IMG_2474.MOV
     └── IMG_2475.MOV
     ...
 ```
-OUTPUT_PATH is initially empty directory and when build is done, Mp4 and txt files will be extracted to your own folder path. (DO NOT use space bar or '_' to your folder path and video name ex) Apple_pie (X))
+OUTPUT_PATH is initially empty directory and when build is done, Mp4 and txt files will be extracted to your own folder path. 
 
-* On training data
+Created folder example:
 ```shell
-  python make_pickle.py --input_file_path=[INPUT_PATH] --output_path=[OUTPUT_FILE]
+output_data
+├── _Apple
+│   ├── IMG_2733.mp4
+│   ├── IMG_2734.mp4
+│   ├── IMG_2735.mp4
+│   └── IMG_2736.mp4
+└── Apple
+    ├── IMG_2472.txt
+    ├── IMG_2473.txt
+    ├── IMG_2474.txt
+    └── IMG_2475.txt
+    ...
 ```
+(DO NOT use space bar or '_' to your folder path and video name ex) Apple_pie (X))
 
-INPUT_PATH is path where all the extracted txt files are saved. This will create file `train_data.pkl` inside OUTPUT_FILE path.
 
 ### 3. Train RNN model
 
