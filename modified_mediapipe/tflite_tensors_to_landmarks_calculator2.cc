@@ -211,7 +211,7 @@ REGISTER_CALCULATOR(TfLiteTensorsToLandmarksCalculator);
       out<<static_cast<float>(landmark.y()) / options_.input_image_height()<<" ";
       //}
       //landpos[i]=make_pair(static_cast<float>(landmark.x())/options_.input_image_width(),
-		s//tatic_cast<float>(landmark.y())/options_.input_image_height());
+		//tatic_cast<float>(landmark.y())/options_.input_image_height());
       i=i+1;
       output_norm_landmarks->push_back(norm_landmark);
     }
