@@ -32,7 +32,7 @@ to our new tflite_tensors_to_landmarks_caculator.cc file in the modified_mediapi
 to our new demo_run_graph_main.cc file in the modified_mediapipe folder.
 
 ### 2. Create you own training data
-Make **train_videos** and **test_videos** for each sign language word in one folder. Copy **build.by** file in util folder to your mediapipe directory.
+Make **train_videos** and **test_videos** for each sign language word in one folder. Copy **build.by** file in util folder to your mediapipe directory. (Currently there may be a TabError. Please chang the tab manually.)
 * Usage
 
 To make mp4 file and txt file with mediapipe automatically, run
