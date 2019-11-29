@@ -17,12 +17,14 @@ from keras.layers import Bidirectional
 import tensorflow as tf
 from numpy import argmax
 
-def load_labels(label_file):
+def load_labels(dirname):
     label = {}
-    count = 0
-    proto_as_ascii_lines = tf.gfile.GFile(label_file).readlines()
-    for l in proto_as_ascii_lines:
-        label[l.strip()] = count
+    count = 1
+    listfile=os.listdir(dirname)
+    for l in listfile:
+        if "_" in l:
+            continue
+        label[l] = count
         count += 1
     return label
 
