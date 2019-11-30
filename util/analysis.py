@@ -2,6 +2,9 @@ import xlsxwriter
 import os
 import sys
 import numpy as np
+import pandas as pd
+from collections import Counter
+import matplotlib.pylab as plt
         
 def convert_tuple(value):
     if not isinstance(value, tuple):
@@ -32,7 +35,7 @@ def make_xlxs(input_file_path, worksheet_name):
     print(workbook)
 
 def return_frame(dirname):
-    fr=[]
+    frames=[] #list to save frame numbers in txt files
     listfile=os.listdir(dirname)
     for file in listfile:
         if "_" in file: #ignore mp4 files
@@ -46,11 +49,23 @@ def return_frame(dirname):
             with open(textname, mode = 'r') as t: #open txt files 
                 numbers = np.array([float(num) for num in t.read().split()])
                 #print(len(numbers)/42)
-                fr.append(int(len(numbers)/42))
-    print(fr)
-                
+                frames.append(int(len(numbers)/42))
+    #print(frames)
+    #for frame in frames:
+    #    unique_num = list(pd.unique(frames))
+    #l = unique_num
+    #print(l)
+    count = Counter(frames)
+    plt.bar(count.keys(), count.values())
+    plt.xlabel('frame number')
+    plt.ylabel('count')
+    plt.title('Histogram')
+    plt.grid(True)
+    plt.savefig('hist.png', dpi=300)
+
+
     
-    
+        
 def main():
     #make_xlxs("/Users/anna/SLR/sentenceOutput/Sentence/bird-like-apple.txt", 'bird-like-apple.xlsx')
     return_frame("/Users/anna/SLR/twenty/traindata/")
