@@ -67,7 +67,8 @@ def load_data(dirname):
     
     tmp = [[x,y] for x, y in zip(X, Y)]
     random.shuffle(tmp)
-    
+    random.shuffle(tmp)
+
     tmp1 = [[xt,yt] for xt, yt in zip(XT, YT)]
     random.shuffle(tmp1)
     
@@ -123,7 +124,7 @@ def bidirectional_lstm():
     model.add(Bidirectional(layers.LSTM(64, return_sequences=True), input_shape=(100, 42)))
     model.add(layers.Bidirectional(layers.LSTM(32)))
     model.add(layers.Dense(4, activation='softmax'))
-    model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])   
+    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])   
     return model
 
 def build_model():
