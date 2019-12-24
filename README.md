@@ -92,8 +92,7 @@ output_data
 Add path to preprocessed pkl file into PKL_FILE.
 
 Watch [this video](https://www.youtube.com/watch?v=5epWNiv5EKk&t=77s) for the overall workflow.
-
-
+https://www.slideshare.net/JiHyunKim204
 
 
 
